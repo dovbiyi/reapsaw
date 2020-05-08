@@ -56,10 +56,14 @@ def zinfo_from_file(fullname):
 
 def is_not_excluded_path(path, exclude_paths):
     """Return False if path excluded, else True"""
+    split_path_list = []
+    for split_path in path.split("/"):
+        split_path_list.append(split_path)
     if exclude_paths:
         for exclude_path in exclude_paths:
-            if exclude_path.lower().strip() in path.lower():
-                return False
+            for split_path in split_path_list:
+                if exclude_path.lower().strip() == split_path.lower():
+                    return False
     return True
 
 

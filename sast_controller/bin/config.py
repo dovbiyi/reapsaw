@@ -18,7 +18,7 @@ import os
 class Config(object):
     """Class with default configuration parameters"""
     EXCLUDED_TYPES = ["png", "zip", "css", "txt", "svg", "mp3", "wav", "less", "gif"]
-    EXCLUDED_PATH = ["node_modules", "config", "coverage", "dist_", "test", "report", "i18n"]
+    EXCLUDED_PATH = ["node_modules", "config", "coverage", "dist_", "test", "report", "i18n", "tests"]
     CODE_PATH = os.environ.get('CODE_PATH') or '/code'
 
     CX_PROJECT_NAME = os.environ.get('CX_PROJECT', os.environ.get('PROJECT', None))
