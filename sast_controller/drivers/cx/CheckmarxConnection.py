@@ -72,8 +72,8 @@ class CheckmarxConnection(object):
             credentials = {'User': self.username, 'Pass': self.password}
             login = client.service.Login(credentials, 1033)
             if not login.IsSuccesfull:
-                raise AssertionError(f"Unable to login in Checkmarx. \n"
-                                     f"Please double check CX_PASSWORD and CX_USER.")
+                raise AssertionError("Unable to login in Checkmarx. \n"
+                                     "Please double check CX_PASSWORD and CX_USER.")
 
             if self.session_id is None:
                 self.session_id = login.SessionId
